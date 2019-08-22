@@ -1,6 +1,16 @@
 class PlacesController < ApplicationController
   def index
-    @places = Place.all
+    city = params[:city]
+    country = params[:country]
+    if city && country
+      @places = Place.find_by_city_country(city, country)
+    elsif city
+      @places = Place.find_by_city(city)
+    elsif country
+      @places = Place.find_by_country(country)
+    else
+      @places = Place.all
+    end
     json_response @places
   end
 
