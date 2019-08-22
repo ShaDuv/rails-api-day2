@@ -41,3 +41,16 @@ describe 'post places route', type: :request do
     expect(body["country"]).to eq(place.country)
   end
 end
+
+describe 'get place route', type: :request do
+  it 'returns the place with the given id' do
+    place = FactoryBot.create(:place)
+
+    get "/places/#{place.id}"
+    body = JSON.parse(response.body)
+    expect(body["id"]).to eq(place.id)
+    expect(body["name"]).to eq(place.name)
+    expect(body["city"]).to eq(place.city)
+    expect(body["country"]).to eq(place.country)
+  end
+end
