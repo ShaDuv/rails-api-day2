@@ -21,6 +21,37 @@ describe 'place routes' do
     end
   end
 
+  describe 'get places route with city and country params', type: :request do
+    it 'returns places with the given city and country' do
+      FactoryBot.create(:place, city: "metropolis", country: "Turkey")
+      place2 = FactoryBot.create(:place, city: "metropolis", country: "USA")
+      get "/places", params: { city: place2.city, country: place2.country }
+      expect(JSON.parse(response.body).size).to eq(1)
+      expect(JSON.parse(response.body)[0]["city"]).to eq(place2.city)
+      expect(JSON.parse(response.body)[0]["country"]).to eq(place2.country)
+    end
+  end
+
+  describe 'get places route with city param', type: :request do
+    it 'returns places with the given city' do
+      FactoryBot.create(:place, city: "gotham", country: "USA")
+      place2 = FactoryBot.create(:place, city: "metropolis", country: "USA")
+      get "/places", params: { city: place2.city }
+      expect(JSON.parse(response.body).size).to eq(1)
+      expect(JSON.parse(response.body)[0]["city"]).to eq(place2.city)
+    end
+  end
+
+  describe 'get places route with country param', type: :request do
+    it 'returns places with the given country' do
+      FactoryBot.create(:place, city: "metropolis", country: "Turkey")
+      place2 = FactoryBot.create(:place, city: "metropolis", country: "USA")
+      get "/places", params: { country: place2.country }
+      expect(JSON.parse(response.body).size).to eq(1)
+      expect(JSON.parse(response.body)[0]["country"]).to eq(place2.country)
+    end
+  end
+
   describe 'post places route', type: :request do
     new_name = "Eifel Tower"
     new_city = "Paris"
