@@ -42,6 +42,11 @@ class PlacesController < ApplicationController
     end
   end
 
+  def by_avg_review
+    @place = Place.sort_by_avg_review
+    json_response @place
+  end
+
   private
 
   def place_params

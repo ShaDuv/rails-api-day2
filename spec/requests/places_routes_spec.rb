@@ -118,6 +118,25 @@ describe 'place routes' do
     end
   end
 
+  describe 'top_reviewed route' do
+    it 'returns all reviews sorted by average rating' do
+      place1 = FactoryBot.create(:place)
+      FactoryBot.create(:review, place: place1, rating: 5)
+      FactoryBot.create(:review, place: place1, rating: 1)
+      # place1's average rating is 3
+      place2 = FactoryBot.create(:place)
+      FactoryBot.create(:review, place: place2, rating: 2)
+      #place2's average rating is lower, so it should come second in the top reviewed list
+      get '/top_reviewed'
+      expect(response).to have_http_status(:success)
+      body = JSON.parse(response.body)
+      # binding.pry
+      expect(body[0]["id"]).to eq(place1.id)
+      expect(body[1]["id"]).to eq(place2.id)
+    end
+  end
+
+  # Helper Methods
   def expect_json_to_eq_object(json_response, place_object)
     body = JSON.parse(json_response.body)
     expect(body["id"]).to eq(place_object.id)
@@ -125,4 +144,5 @@ describe 'place routes' do
     expect(body["city"]).to eq(place_object.city)
     expect(body["country"]).to eq(place_object.country)
   end
+
 end

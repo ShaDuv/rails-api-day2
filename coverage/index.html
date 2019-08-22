@@ -14,14 +14,14 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-08-22T11:35:16-07:00">2019-08-22T11:35:16-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-08-22T11:56:59-07:00">2019-08-22T11:56:59-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">99.08%</span></span>
+    (<span class="covered_percent"><span class="green">99.42%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
@@ -32,9 +32,9 @@
   <a name="AllFiles"></a>
   <div>
     <b>28</b> files in total.
-    <b>326</b> relevant lines. 
-    <span class="green"><b>323</b> lines covered</span> and
-    <span class="red"><b>3</b> lines missed </span>
+    <b>342</b> relevant lines. 
+    <span class="green"><b>340</b> lines covered</span> and
+    <span class="red"><b>2</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -77,17 +77,17 @@
         <td>3</td>
         <td>3</td>
         <td>0</td>
-        <td>6.0</td>
+        <td>6.3</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#0d7f9b07fe6801aa6b6228869cce2a328f4a8cd5" class="src_link" title="app/controllers/places_controller.rb">app/controllers/places_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>50</td>
-        <td>29</td>
-        <td>29</td>
+        <td>55</td>
+        <td>32</td>
+        <td>32</td>
         <td>0</td>
-        <td>2.0</td>
+        <td>1.9</td>
       </tr>
       
       <tr>
@@ -112,12 +112,12 @@
       
       <tr>
         <td class="strong"><a href="#f64a9fd9f78f38228f3b6b4f7b53cafbf2c7bb09" class="src_link" title="app/models/place.rb">app/models/place.rb</a></td>
-        <td class="yellow strong">90.0 %</td>
+        <td class="green strong">100.0 %</td>
         <td>19</td>
         <td>10</td>
-        <td>9</td>
-        <td>1</td>
-        <td>1.2</td>
+        <td>10</td>
+        <td>0</td>
+        <td>1.3</td>
       </tr>
       
       <tr>
@@ -243,9 +243,9 @@
       <tr>
         <td class="strong"><a href="#1fd9e53cee062118005a1953f443bed4f85a7ad6" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>6</td>
-        <td>3</td>
-        <td>3</td>
+        <td>8</td>
+        <td>4</td>
+        <td>4</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -277,7 +277,7 @@
         <td>16</td>
         <td>16</td>
         <td>0</td>
-        <td>19.8</td>
+        <td>20.7</td>
       </tr>
       
       <tr>
@@ -313,9 +313,9 @@
       <tr>
         <td class="strong"><a href="#e0f5c866354d8108309b8764b3629ddf0e1719c4" class="src_link" title="spec/requests/places_routes_spec.rb">spec/requests/places_routes_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>128</td>
-        <td>85</td>
-        <td>85</td>
+        <td>148</td>
+        <td>97</td>
+        <td>97</td>
         <td>0</td>
         <td>1.2</td>
       </tr>
@@ -524,8 +524,8 @@
           <code class="ruby">  def json_response(object, status = :ok)</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="3">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="17" data-linenumber="3">
+          <span class="hits">17</span>
           
           <code class="ruby">    render json: object, status: status</code>
         </li>
@@ -552,8 +552,8 @@
     <h3>app/controllers/places_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>29</b> relevant lines. 
-      <span class="green"><b>29</b> lines covered</span> and
+      <b>32</b> relevant lines. 
+      <span class="green"><b>32</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -828,34 +828,64 @@
         <li class="covered" data-hits="1" data-linenumber="45">
           <span class="hits">1</span>
           
-          <code class="ruby">  private</code>
+          <code class="ruby">  def by_avg_review</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="46">
+        <li class="covered" data-hits="1" data-linenumber="46">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    @place = Place.sort_by_avg_review</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="47">
           <span class="hits">1</span>
           
-          <code class="ruby">  def place_params</code>
+          <code class="ruby">    json_response @place</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="48">
-          <span class="hits">4</span>
-          
-          <code class="ruby">    params.permit :name, :city, :country</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="49">
+        <li class="never" data-hits="" data-linenumber="48">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="50">
+        <li class="never" data-hits="" data-linenumber="49">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="50">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="51">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="52">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def place_params</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="53">
+          <span class="hits">4</span>
+          
+          <code class="ruby">    params.permit :name, :city, :country</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="54">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="55">
           
           
           <code class="ruby">end</code>
@@ -1189,11 +1219,11 @@
         <div class="source_table" id="f64a9fd9f78f38228f3b6b4f7b53cafbf2c7bb09">
   <div class="header">
     <h3>app/models/place.rb</h3>
-    <h4><span class="yellow">90.0 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
       <b>10</b> relevant lines. 
-      <span class="green"><b>9</b> lines covered</span> and
-      <span class="red"><b>1</b> lines missed.</span>
+      <span class="green"><b>10</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -1275,13 +1305,13 @@
         <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
-          <code class="ruby">  scope :avg_review, -&gt; {</code>
+          <code class="ruby">  scope :sort_by_avg_review, -&gt; {</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">
           
           
-          <code class="ruby">    select(&quot;places.id, places.name, places.city, places.country, AVG(reviews.id) AS reviews_avg&quot;)</code>
+          <code class="ruby">    select(&quot;places.id, places.name, places.city, places.country, AVG(reviews.rating) AS reviews_avg&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
@@ -1296,8 +1326,8 @@
           <code class="ruby">    .group(&quot;places.id&quot;)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="17">
-          
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
           
           <code class="ruby">    .order(&quot;reviews_avg DESC&quot;)</code>
         </li>
@@ -2554,8 +2584,8 @@
     <h3>config/routes.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>3</b> relevant lines. 
-      <span class="green"><b>3</b> lines covered</span> and
+      <b>4</b> relevant lines. 
+      <span class="green"><b>4</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -2590,10 +2620,22 @@
         <li class="never" data-hits="" data-linenumber="5">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  get &#39;/top_reviewed&#39;, to: &#39;places#by_avg_review&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
           <code class="ruby">  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="never" data-hits="" data-linenumber="8">
           
           
           <code class="ruby">end</code>
@@ -2728,8 +2770,8 @@
           <code class="ruby">  factory :review do</code>
         </li>
       
-        <li class="covered" data-hits="21" data-linenumber="3">
-          <span class="hits">21</span>
+        <li class="covered" data-hits="24" data-linenumber="3">
+          <span class="hits">24</span>
           
           <code class="ruby">    user_name { Faker::Movies::HarryPotter.character }</code>
         </li>
@@ -2740,14 +2782,14 @@
           <code class="ruby">    rating { rand(1..5) }</code>
         </li>
       
-        <li class="covered" data-hits="21" data-linenumber="5">
-          <span class="hits">21</span>
+        <li class="covered" data-hits="24" data-linenumber="5">
+          <span class="hits">24</span>
           
           <code class="ruby">    headline { Faker::Movies::HarryPotter.spell }</code>
         </li>
       
-        <li class="covered" data-hits="21" data-linenumber="6">
-          <span class="hits">21</span>
+        <li class="covered" data-hits="24" data-linenumber="6">
+          <span class="hits">24</span>
           
           <code class="ruby">    body { Faker::Movies::HarryPotter.quote }</code>
         </li>
@@ -2776,20 +2818,20 @@
           <code class="ruby">  factory :place do</code>
         </li>
       
-        <li class="covered" data-hits="76" data-linenumber="11">
-          <span class="hits">76</span>
+        <li class="covered" data-hits="78" data-linenumber="11">
+          <span class="hits">78</span>
           
           <code class="ruby">    name { Faker::Movies::HarryPotter.location }</code>
         </li>
       
-        <li class="covered" data-hits="70" data-linenumber="12">
-          <span class="hits">70</span>
+        <li class="covered" data-hits="72" data-linenumber="12">
+          <span class="hits">72</span>
           
           <code class="ruby">    city { Faker::Address.city }</code>
         </li>
       
-        <li class="covered" data-hits="70" data-linenumber="13">
-          <span class="hits">70</span>
+        <li class="covered" data-hits="72" data-linenumber="13">
+          <span class="hits">72</span>
           
           <code class="ruby">    country { Faker::Address.country }</code>
         </li>
@@ -3449,8 +3491,8 @@
     <h3>spec/requests/places_routes_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>85</b> relevant lines. 
-      <span class="green"><b>85</b> lines covered</span> and
+      <b>97</b> relevant lines. 
+      <span class="green"><b>97</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -3482,8 +3524,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="5">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="13" data-linenumber="5">
+          <span class="hits">13</span>
           
           <code class="ruby">  before(:each) { Place.destroy_all }</code>
         </li>
@@ -4181,46 +4223,166 @@
         <li class="covered" data-hits="1" data-linenumber="121">
           <span class="hits">1</span>
           
-          <code class="ruby">  def expect_json_to_eq_object(json_response, place_object)</code>
+          <code class="ruby">  describe &#39;top_reviewed route&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="122">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="122">
+          <span class="hits">1</span>
           
-          <code class="ruby">    body = JSON.parse(json_response.body)</code>
+          <code class="ruby">    it &#39;returns all reviews sorted by average rating&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="123">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="123">
+          <span class="hits">1</span>
           
-          <code class="ruby">    expect(body[&quot;id&quot;]).to eq(place_object.id)</code>
+          <code class="ruby">      place1 = FactoryBot.create(:place)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="124">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="124">
+          <span class="hits">1</span>
           
-          <code class="ruby">    expect(body[&quot;name&quot;]).to eq(place_object.name)</code>
+          <code class="ruby">      FactoryBot.create(:review, place: place1, rating: 5)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="125">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="125">
+          <span class="hits">1</span>
           
-          <code class="ruby">    expect(body[&quot;city&quot;]).to eq(place_object.city)</code>
+          <code class="ruby">      FactoryBot.create(:review, place: place1, rating: 1)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="126">
-          <span class="hits">2</span>
+        <li class="never" data-hits="" data-linenumber="126">
           
-          <code class="ruby">    expect(body[&quot;country&quot;]).to eq(place_object.country)</code>
+          
+          <code class="ruby">      # place1&#39;s average rating is 3</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="127">
+        <li class="covered" data-hits="1" data-linenumber="127">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      place2 = FactoryBot.create(:place)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="128">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      FactoryBot.create(:review, place: place2, rating: 2)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="129">
+          
+          
+          <code class="ruby">      #place2&#39;s average rating is lower, so it should come second in the top reviewed list</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="130">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      get &#39;/top_reviewed&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="131">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(response).to have_http_status(:success)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="132">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      body = JSON.parse(response.body)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="133">
+          
+          
+          <code class="ruby">      # binding.pry</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="134">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(body[0][&quot;id&quot;]).to eq(place1.id)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="135">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(body[1][&quot;id&quot;]).to eq(place2.id)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="136">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="137">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="128">
+        <li class="never" data-hits="" data-linenumber="138">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="139">
+          
+          
+          <code class="ruby">  # Helper Methods</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="140">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def expect_json_to_eq_object(json_response, place_object)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="141">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    body = JSON.parse(json_response.body)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="142">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    expect(body[&quot;id&quot;]).to eq(place_object.id)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="143">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    expect(body[&quot;name&quot;]).to eq(place_object.name)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="144">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    expect(body[&quot;city&quot;]).to eq(place_object.city)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="145">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    expect(body[&quot;country&quot;]).to eq(place_object.country)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="146">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="147">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="148">
           
           
           <code class="ruby">end</code>
